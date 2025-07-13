@@ -1,0 +1,26 @@
+<section class="experience-section blogs">
+  <div class="container">
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      <div class="timeline-line-fill"></div>
+
+      <div class="experience-intro">
+        <h2>Blogs</h2>
+        <p>I write about software development, sharing insights and experiences from my journey in tech.</p>
+      </div>
+      <!-- as blogs  array is passed via controller -->
+      <% blogs.forEach(blog => { %>
+        <div class="timeline-item blog-item">
+          <div class="timeline-icon"></div>
+          <div class="blog-card">
+            <a href="<%= blog.url %>" class="blog-title-link" target="_blank" rel="noopener noreferrer">
+              <h3><%= blog.title %></h3>
+            </a>
+            <p class="description"><%= blog.description %></p>
+            <p class="blog-date"><%= blog.date %></p>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>

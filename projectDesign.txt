@@ -1,0 +1,24 @@
+portfolio/
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   └── js/               # Static files (CSS, JS, images)
+├── src/
+│   ├── controllers/      # Business logic
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # Route definitions
+│   ├── views/  
+│   |      ├── partials/
+│   |      |       ├── header.ejs
+│   |      |       └── footer.ejs
+│   |      ├── index.ejs
+│   |      ├── about.ejs
+│   |      ├── projects.ejs
+│   |      └── contact.ejs      # EJS templates
+│   ├── middleware/       # Custom middleware (validators, rate limit, etc.)
+│   ├── utils/            # Email helpers, debouncing etc.
+│   └── config/           # DB connection, dotenv
+├── .env                  # Environment variables
+├── app.js                # Entry point
+├── package.json

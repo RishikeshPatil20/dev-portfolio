@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<section class="experience-section">
+  <div class="container">
+    <div class="experience-intro">
+      <h2>Projects</h2>
+      <p>Here's a timeline of my professional journey, showcasing my contributions and projects in full-stack development.</p>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-line"></div> <% /* This is the fixed line */ %>
+      <div class="timeline-line-fill"></div> <% /* This line fills on scroll */ %>
+      <!-- as experiences array is passed via controller -->
+      <% experiences.forEach((exp) => { %>
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="experience-card">
+            <h3><%= exp.title %></h3>
+            <p class="company"><%= exp.softwaredevelopment %> <span class="status">(<%= exp.status %>)</span></p>
+            <p class="description"><%= exp.description %></p>
+            <div class="tech-stack">
+              <% exp.tech.forEach(tech => { %>
+                <span><%= tech %></span>
+              <% }); %>
+            </div>
+            <% if (exp.links && exp.links.length > 0) { %>
+              <div class="card-links">
+                <% exp.links.forEach(link => { %>
+                  <a href="<%= link.url %>" target="_blank" rel="noopener noreferrer">
+                    <i class="<%= link.icon %>"></i> <%= link.text %>
+                  </a>
+                <% }); %>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="/js/timeline.js"></script>
